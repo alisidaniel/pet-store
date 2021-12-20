@@ -23,11 +23,11 @@ export class OwnersService {
     return this.ownersRepository.findOneOrFail(id);
   }
 
-  update(id: number, updateOwnerInput: UpdateOwnerInput) {
-    return `This action updates a #${id} owner`;
+  async update(id: number, updateOwnerInput: UpdateOwnerInput) {
+    return this.ownersRepository.update(id, updateOwnerInput);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} owner`;
+    return this.ownersRepository.delete(id);
   }
 }
